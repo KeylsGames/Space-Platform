@@ -1,18 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Code by Luc Manon
+
+//Pire escroquerie du monde pour faire suivre un background :DD
+//Le background suit le personnage, et s'inverse quand il change de direction pour rester fluide.
+
 public class backgroundDirection : MonoBehaviour {
 
-    public Transform player;
-    public bool aDroite;
+    #region Variables
 
-	// Use this for initialization
-	void Start ()
+    //Déclarations des variables
+    public Transform player;
+    public bool aDroite; 
+    #endregion
+
+    /// <summary>
+    /// Pour l'initialisation
+    /// </summary>
+    void Start ()
     {
 	
 	}
 	
-	// Update is called once per frame
+	/// <summary>
+    /// Update est appelé 1 fois par frame
+    /// </summary>
 	void Update ()
     {
         float x = Input.GetAxis("Horizontal");
@@ -30,11 +43,15 @@ public class backgroundDirection : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Permet de changer la direction du background
+    /// </summary>
     void changerDirection()
     {
         aDroite = !aDroite;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-    }
+    } 
+
 }
