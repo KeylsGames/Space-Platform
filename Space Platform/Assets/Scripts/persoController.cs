@@ -3,10 +3,10 @@ using System.Collections;
 
 public class persoController : MonoBehaviour {
 
+    #region Variables
     //Déclarations des variables
     public Animator anim;
     public float speed = 5f;
-    public float jumpPower = 500f;
     public Rigidbody2D perso;
 
     public Transform checksol;
@@ -14,7 +14,8 @@ public class persoController : MonoBehaviour {
     float rayonSol = 0.3f;
     public LayerMask Sol;
 
-    bool aDroite = true;
+    bool aDroite = true; 
+    #endregion
 
 
     // Use this for initialization
